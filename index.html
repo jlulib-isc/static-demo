@@ -1,2 +1,31 @@
-页面施工中……
-页面持续施工中……
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>页面管理器</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.wrap{display:flex;height:100vh;}
+aside{width:220px;background:#222;color:#fff;padding:1rem;}
+aside a{display:block;color:#fff;margin:8px 0;cursor:pointer;}
+iframe{flex:1;border:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <aside>
+    <h4>页面列表</h4>
+    <a onclick="loadPage('page1.html')">页面1</a>
+    <a onclick="loadPage('page2.html')">页面2</a>
+    <a onclick="loadPage('page3.html')">页面3</a>
+    <a onclick="loadPage('pdf1.pdf#toolbar=0&navpanes=0')">pdf1</a>
+  </aside>
+  <iframe id="subBrowser"></iframe>
+</div>
+<script>
+function loadPage(url){
+  document.getElementById('subBrowser').src = url;
+}
+</script>
+</body>
+</html>
